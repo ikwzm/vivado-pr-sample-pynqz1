@@ -1,0 +1,9 @@
+[submodule "msgpack-vhdl-examples"]
+	path = msgpack-vhdl-examples
+	url = https://github.com/ikwzm/msgpack-vhdl-examples
+[submodule "LED_AXI"]
+	path = LED_AXI
+	url = https://github.com/ikwzm/LED_AXI
+[submodule "PTTY_AXI"]
+	path = PTTY_AXI
+	url = https://github.com/ikwzm/PTTY_AXI
