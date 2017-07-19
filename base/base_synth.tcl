@@ -1,9 +1,7 @@
 #
 # Open Project
 #
-set project_directory   "."
-set project_name        "project"
-open_project [file join $project_directory $project_name]
+open_project [file join "." "project"]
 #
 # Run Synthesis
 #

@@ -4,13 +4,12 @@
 set     project_name       "project"
 set     project_directory   [file dirname [info script]]
 set     script_directory    [file dirname [info script]]
-set     board_part          [get_board_parts -quiet -latest_file_version "*pynq*"]
-set     device_part         "xc7z020clg400-1"
 set     design_bd_tcl_file  [file join $script_directory "base_bd.tcl"  ]
 lappend constrs_file_list   [file join $script_directory "base_pin.xdc" ]
 lappend ip_repo_path_list   [file join $script_directory ".." "PTTY_AXI" "target" "xilinx" "ip"]
 lappend ip_repo_path_list   [file join $script_directory ".." "LED_AXI"  "target" "xilinx" "ip"]
-lappend ip_repo_path_list   [file join $script_directory ".." "examples" "loop_server"]
+lappend ip_repo_path_list   [file join $script_directory ".." "ip" "loop_server"]
+source  [file join [file dirname [info script]] "base_settings.tcl"]
 #
 # Create project
 #

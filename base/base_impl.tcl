@@ -1,6 +1,6 @@
 open_checkpoint base_synth.dcp
 
-source base_pblock.tcl
+source base_settings.tcl
 
 foreach {pblock} $pblock_list {
     create_pblock $pblock

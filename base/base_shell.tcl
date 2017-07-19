@@ -1,6 +1,6 @@
 open_checkpoint base_impl.dcp
 
-source base_pblock.tcl
+source base_settings.tcl
 
 foreach {pblock} $pblock_list {
     update_design -cell $pblock_info($pblock.cell) -black_box
