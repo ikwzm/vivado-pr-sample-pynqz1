@@ -1,0 +1,14 @@
+/dts-v1/; /plugin/;
+/ {
+	fragment@2 {
+		target-path = "/amba/fpga-region0/fpga-bridge1/fpga-region1";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			firmware-name = "fibonacci_polyphony_rpc_server_0_partial.bin";
+			partial-fpga-config;
+		};
+	};
+};

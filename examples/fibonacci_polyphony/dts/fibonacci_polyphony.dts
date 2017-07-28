@@ -1,0 +1,38 @@
+/dts-v1/; /plugin/;
+/ {
+	fragment@2 {
+		target-path = "/amba/fpga-region0";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			firmware-name = "fibonacci_polyphony.bin";
+			
+			fpga_bridge1: fpga-bridge1 {
+				compatible = "xlnx,pr-decoupler";
+				#address-cells = <1>;
+				#size-cells = <1>;
+				reg = <0x43C20000 0x1000>;
+				clocks = <&clkc 15>;
+				clock-names = "aclk";
+
+				fpga_region1: fpga-region1 {
+					compatible = "fpga-region";
+					#address-cells = <0x1>;
+					#size-cells = <0x1>;
+					ranges;
+				};
+			};
+			zptty@43c10000 {
+				compatible = "ikwzm,zptty-0.10.a";
+				#address-cells = <1>;
+				#size-cells = <1>;
+				minor-number = <0>;
+				reg = <0x43C10000 0x1000>;
+				interrupt-parent = <&intc>;
+				interrupts = <0x0 0x1d 0x4>;
+			};
+		};
+	};
+};
